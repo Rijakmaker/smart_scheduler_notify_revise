@@ -1,0 +1,96 @@
+:root {
+    --primary: #4a90e2;
+    --danger: #ff4757;
+    --success: #2ed573;
+    --bg: #f0f4f8;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    --day2: #4a90e2; --day3: #9b59b6; --day5: #f1c40f; --day7: #e67e22;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container { width: 100%; max-width: 1100px; }
+
+header { text-align: center; margin-bottom: 40px; }
+
+/* Form Section */
+.input-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    align-items: flex-end;
+}
+
+.input-group { flex: 1; min-width: 250px; display: flex; flex-direction: column; }
+label { font-weight: bold; margin-bottom: 8px; color: #444; font-size: 0.9rem; }
+input { padding: 12px; border: 2px solid #e1e8ed; border-radius: 10px; font-size: 1rem; }
+
+.btn { padding: 14px 28px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-voice { background: #2d3436; color: white; margin-bottom: 20px; }
+.btn-danger { background: none; border: 1px solid var(--danger); color: var(--danger); font-size: 0.8rem; }
+.btn-danger:hover { background: var(--danger); color: white; }
+
+/* Grid and Cards */
+.grid-title { border-left: 5px solid var(--primary); padding-left: 15px; margin: 40px 0 20px; color: #2d3436; }
+.study-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+
+.task-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border-top: 8px solid #ccc;
+    box-shadow: var(--card-shadow);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.day-2 { border-top-color: var(--day2); }
+.day-3 { border-top-color: var(--day3); }
+.day-5 { border-top-color: var(--day5); }
+.day-7 { border-top-color: var(--day7); }
+
+.due-today { 
+    border: 2px solid var(--danger); 
+    animation: pulse 2s infinite; 
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+}
+
+/* Progress Bar */
+.progress-box { margin: 15px 0; }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; }
+.progress-bg { background: #edf2f7; height: 8px; border-radius: 10px; overflow: hidden; }
+.progress-fill { 
+    background: linear-gradient(90deg, var(--success), #5dec9c); 
+    height: 100%; transition: width 1s cubic-bezier(0.1, 0.9, 0.2, 1); 
+}
+
+.badge { font-size: 0.7rem; font-weight: 800; padding: 5px 10px; border-radius: 6px; background: #f1f2f6; margin-bottom: 15px; display: inline-block; }
+.badge-due { background: var(--danger); color: white; }
+
+.btn-done { width: 100%; margin-top: 15px; background: #f8f9fa; color: var(--primary); border: 2px solid var(--primary); }
+.btn-done:hover { background: var(--primary); color: white; }
+
+.history-grid .task-card { filter: grayscale(0.8); opacity: 0.7; }
+.mastered-badge { background: var(--success); color: white; }
