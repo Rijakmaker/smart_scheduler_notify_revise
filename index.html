@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery Scheduler: 2-3-5-7 System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>2-3-5-7 Mastery Scheduler</h1>
+        <button id="enableVoice" class="btn btn-voice">🔊 Enable Voice Alarms</button>
+    </header>
+
+    <div class="input-card">
+        <div class="input-group">
+            <label>What are you studying?</label>
+            <input type="text" id="topicInput" placeholder="e.g., Organic Chemistry">
+        </div>
+        <div class="input-group">
+            <label>Start Date (Day 1)</label>
+            <input type="date" id="dateInput">
+        </div>
+        <button id="addBtn" class="btn btn-primary">Generate Schedule</button>
+    </div>
+
+    <h2 class="grid-title">Upcoming Revision Sessions</h2>
+    <div id="studyGrid" class="study-grid"></div>
+
+    <h2 class="grid-title">Revision History</h2>
+    <div id="historyGrid" class="study-grid history-grid"></div>
+    <button id="clearHistory" class="btn btn-danger" style="margin-top: 30px;">Clear All History</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
